@@ -7,16 +7,18 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="mx-auto bg-base-300">
+<body class="mx-auto bg-base-100">
     {{-- INCLUDES FOR COMPONENTS --}}
     @include('components.header')
 
-    <main>
+    <main class="py-4 mx-[10%]">
         {{-- YIELD FOR CONTENT --}}
         @yield('content')
     </main>
 
     @include('components.footer')
+
+    @livewireScripts
 
 </body>
 </html>

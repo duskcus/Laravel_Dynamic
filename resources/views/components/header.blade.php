@@ -8,17 +8,10 @@
 
         <!-- Navigation Links -->
         <div class="hidden md:block">
-            <a href="#" class="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-gray-300">
+            <a href="{{ route('home') }}"
+                class="link no-underline block mt-4 lg:inline-block lg:mt-0 mr-4
+                {{ request()->routeIs('home') ? 'text-primary' : 'hover:opacity-75' }}">
                 Home
-            </a>
-            <a href="#" class="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-gray-300">
-                Products
-            </a>
-            <a href="#" class="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-gray-300">
-                About
-            </a>
-            <a href="#" class="block mt-4 text-white lg:inline-block lg:mt-0 hover:text-gray-300">
-                Contact
             </a>
         </div>
     </div>
