@@ -9,16 +9,18 @@
 
 <body class="mx-auto bg-base-100">
     {{-- INCLUDES FOR COMPONENTS --}}
-    @include('components.header')
+    {{-- @include('components.header') --}}
+    @livewire('website.navbar')
 
     <main class="py-4 mx-[10%]">
         {{-- YIELD FOR CONTENT --}}
         @yield('content')
     </main>
 
-    @include('components.footer')
+    @livewire('website.footer')
+
 
     @livewireScripts
-
+    @livewireStyles
 </body>
 </html>
