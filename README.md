@@ -1,5 +1,5 @@
 # Laravel_Dynamic
-Uses TALL + DaisyUI
+Uses Tailwind 3, Alpine, Livewire 3, Laravel 11 + DaisyUI 4 Soon 5
 
 WIP: Website + SPA components
 - Dynamic Navbar
