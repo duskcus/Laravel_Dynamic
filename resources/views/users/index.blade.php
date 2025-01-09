@@ -3,6 +3,7 @@
 {{-- @SECTION FOR THE START CONTENT --}}
 @section('content')
     <section>
-        hello world.
+        {{-- @livewire('website.crud-table', ['model' => 'users']) --}}
+        @livewire('website.crud-table')
     </section>
 @endsection
