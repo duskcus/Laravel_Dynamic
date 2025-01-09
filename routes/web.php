@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Livewire\Website;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 
-use Livewire\Component;
+Route::get('/', function () {
+    return view('index');
+})->name('home');
 
-class Navbar extends Component
-{
-    public function render()
-    {
-        // Dynamically generate the navbar items
-        $navbarItems = [
-            ['name' => 'Home', 'url' => route('home')],
-            ['name' => 'Users', 'url' => route('users.index')],
-            ['name' => 'About', 'url' => route('about')],
-            ['name' => 'Services', 'url' => route('services')],
-            ['name' => 'Contact', 'url' => route('contact')],
-        ];
+Route::get('/about', function () {
+    return view('index');
+})->name('about');
 
-        // Pass the items to the view
-        return view('livewire.website.navbar', compact('navbarItems'));
-    }
-}
+Route::get('/services', function () {
+    return view('index');
+})->name('services');
+
+Route::get('/contact', function () {
+    return view('index');
+})->name('contact');
+
+// RESOURCES
+Route::apiResource('users', UsersController::class);
