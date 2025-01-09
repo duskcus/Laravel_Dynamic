@@ -7,6 +7,8 @@ WIP: Website + SPA components
 - AJAX modal form
 - CRUD Table
 - Filters
+- Searchbar
+- Dyanmic third party api
 
 ```
 php artisan make:livewire componentName

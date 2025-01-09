@@ -4,7 +4,7 @@
             <!-- Logo -->
             <div class="flex items-center flex-shrink-0 mr-6 text-white hover:text-gray-300">
                 <!-- Logo Image -->
-                <span class="ml-2 mr-6 text-xl font-semibold">Logo</span>
+                <a href="#" class="ml-2 mr-6 text-xl font-semibold">Logo</a>
             </div>
 
             <!-- Navigation Links -->
