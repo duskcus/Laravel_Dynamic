@@ -1,19 +1,23 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+namespace App\Livewire\Website;
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+use Livewire\Component;
 
-Route::get('/about', function () {
-    return view('index');
-})->name('about');
+class Navbar extends Component
+{
+    public function render()
+    {
+        // Dynamically generate the navbar items
+        $navbarItems = [
+            ['name' => 'Home', 'url' => route('home')],
+            ['name' => 'Users', 'url' => route('users.index')],
+            ['name' => 'About', 'url' => route('about')],
+            ['name' => 'Services', 'url' => route('services')],
+            ['name' => 'Contact', 'url' => route('contact')],
+        ];
 
-Route::get('/services', function () {
-    return view('index');
-})->name('services');
-
-Route::get('/contact', function () {
-    return view('index');
-})->name('contact');
+        // Pass the items to the view
+        return view('livewire.website.navbar', compact('navbarItems'));
+    }
+}
