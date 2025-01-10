@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Website;
+namespace App\Livewire;
 
 use Livewire\Component;
 
@@ -18,6 +18,6 @@ class Sidebar extends Component
         ];
         
         // Pass the items to the view
-        return view('livewire.website.sidebar', compact('sidebarItems'));
+        return view('livewire.sidebar', compact('sidebarItems'));
     }
 }

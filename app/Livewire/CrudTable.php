@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Website;
+namespace App\Livewire;
 
 use Livewire\Component;
 
@@ -13,7 +13,16 @@ class CrudTable extends Component
     public function mount($model, $columns = []) 
     {
         $this->model = $model;  // Set the passed model
-        $this->columns = $columns ?: $this->getDefaultColumns();  // Use passed columns, or fallback to default
+        
+        // Loop through columns and set label to field if not set
+        $this->columns = collect($columns)->map(function ($column) {
+            // If no label is set, use the field value as the label
+            if (empty($column['label'])) {
+                // Default label is the field value (formatted nicely)
+                $column['label'] = ucfirst(str_replace('_', ' ', $column['field']));
+            }
+            return $column;
+        })->toArray();
     }
 
     // Render method to fetch data and pass it to the view
@@ -23,7 +32,7 @@ class CrudTable extends Component
         $data = $this->model::paginate(10);  // Dynamic pagination
 
         // Pass both data and columns to the view
-        return view('livewire.website.crud-table', ['data' => $data, 'columns' => $this->columns]);  
+        return view('livewire.crud-table', ['data' => $data, 'columns' => $this->columns]);
     }
 
     // Define default column configuration

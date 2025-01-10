@@ -31,8 +31,18 @@
                         <!-- Loop through the columns to display the data -->
                         @foreach ($columns as $column)
                             <td>
-                                <!-- Display the field dynamically based on the column's 'field' attribute -->
-                                {{ $item->{$column['field']} ?? 'N/A' }}
+                                <!-- Check if the column is for an image -->
+                                @if (!empty($column['image']) && $column['image'] === true)
+                                    <!-- Render the image if it's an image column -->
+                                    @if ($item->{$column['field']})
+                                        <img src="{{ asset($item->{$column['field']}) }}" alt="Image" width="50" />
+                                    @else
+                                        <span>No Image</span>
+                                    @endif
+                                @else
+                                    <!-- Otherwise, just show the field value -->
+                                    {{ $item->{$column['field']} ?? 'N/A' }}
+                                @endif
                             </td>
                         @endforeach
 
