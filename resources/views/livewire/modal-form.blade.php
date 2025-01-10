@@ -7,7 +7,7 @@
     @endif
 
     <!-- Button to trigger the modal (this could be a button to edit or add a user) -->
-    <button class="btn" onclick="userModal.showModal()">Open User Modal</button>
+    <button class="btn btn-primary" onclick="userModal.showModal()">Open User Modal</button>
 
     <!-- DaisyUI Modal -->
     <dialog id="userModal" class="modal">

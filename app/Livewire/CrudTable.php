@@ -3,11 +3,13 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Http;
 
 class CrudTable extends Component
 {
     public $model;  // Dynamic model
     public $columns = [];  // Dynamic columns configuration
+    public $apiUrl = 'https://pokeapi.co/api/v2/pokemon/1'; // Dynamic api integration
 
     // Mount method to initialize model and columns
     public function mount($model, $columns = []) 
@@ -25,14 +27,12 @@ class CrudTable extends Component
         })->toArray();
     }
 
-    // Render method to fetch data and pass it to the view
-    public function render()
+    // Fetch data from the API dynamically
+    public function loadData()
     {
-        // Fetch data dynamically from the passed model
-        $data = $this->model::paginate(10);  // Dynamic pagination
-
-        // Pass both data and columns to the view
-        return view('livewire.crud-table', ['data' => $data, 'columns' => $this->columns]);
+        // $this->apiUrl = $apiUrl;
+        $response = Http::get($this->apiUrl);
+        dd($response->json());
     }
 
     // Define default column configuration
@@ -43,5 +43,15 @@ class CrudTable extends Component
             ['label' => 'Email', 'field' => 'email', 'sortable' => false],
             // Add more default columns as needed
         ];
+    }
+
+    // Render method to fetch data and pass it to the view
+    public function render()
+    {
+        // Fetch data dynamically from the passed model
+        $data = $this->model::paginate(10);  // Dynamic pagination
+
+        // Pass both data and columns to the view
+        return view('livewire.crud-table', ['data' => $data, 'columns' => $this->columns]);
     }
 }

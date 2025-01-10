@@ -6,18 +6,11 @@ use Livewire\Component;
 
 class Footer extends Component
 {
+    public $sections = [];
+
     public function render()
     {
-        // Dynamically generate the navbar items
-        $footerItems = [
-            ['name' => 'Home', 'url' => route('home')],
-            ['name' => 'Users', 'url' => route('users.index')],
-            ['name' => 'About', 'url' => route('about')],
-            ['name' => 'Services', 'url' => route('services')],
-            ['name' => 'Contact', 'url' => route('contact')],
-        ];
-        
-        // Pass the items to the view
-        return view('livewire.footer', compact('footerItems'));
+        // Pass the sections to the view
+        return view('livewire.footer');
     }
 }
