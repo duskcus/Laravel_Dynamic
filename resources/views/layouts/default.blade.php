@@ -27,27 +27,27 @@
         [
         'title' => 'Services',
         'links' => [
-            ['name' => 'Branding'],  // Custom URL
-            ['name' => 'Design', 'url' => route('home')],  // Defaults to route('design') if no 'url' is provided
-            ['name' => 'Marketing', 'url' => route('home')],
-            ['name' => 'Advertisement', 'url' => route('home')],
+            ['name' => 'Branding', 'url' => route('placeholder')],  // Custom URL
+            ['name' => 'Design', 'url' => route('placeholder')],  // Defaults to route('design') if no 'url' is provided
+            ['name' => 'Marketing', 'url' => route('placeholder')],
+            ['name' => 'Advertisement', 'url' => route('placeholder')],
             ],
         ],
         [
             'title' => 'Company',
             'links' => [
-                ['name' => 'About us', 'url' => route('home')],
-                ['name' => 'Contact', 'url' => route('home')],
-                ['name' => 'Jobs', 'url' => route('home')],
-                ['name' => 'Press kit', 'url' => route('home')],
+                ['name' => 'About us', 'url' => route('placeholder')],
+                ['name' => 'Contact', 'url' => route('placeholder')],
+                ['name' => 'Jobs', 'url' => route('placeholder')],
+                ['name' => 'Press kit', 'url' => route('placeholder')],
             ],
         ],
         [
             'title' => 'Legal',
             'links' => [
-                ['name' => 'Terms of use', 'url' => route('home')],
-                ['name' => 'Privacy policy', 'url' => route('home')],
-                ['name' => 'Cookie policy', 'url' => route('home')],
+                ['name' => 'Terms of use', 'url' => route('placeholder')],
+                ['name' => 'Privacy policy', 'url' => route('placeholder')],
+                ['name' => 'Cookie policy', 'url' => route('placeholder')],
             ],
         ],
     ]])    
