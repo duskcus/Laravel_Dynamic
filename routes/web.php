@@ -7,17 +7,9 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/about', function () {
-    return view('index');
-})->name('about');
-
-Route::get('/services', function () {
-    return view('index');
-})->name('services');
-
-Route::get('/contact', function () {
-    return view('index');
-})->name('contact');
+Route::get('/placeholder', function () {
+    return ('placeholder route');
+})->name('placeholder');
 
 // RESOURCES
 Route::apiResource('users', UsersController::class);
