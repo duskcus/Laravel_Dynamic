@@ -5,7 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
 
-class CrudTable extends Component
+class Table extends Component
 {
     public $model;  // Dynamic model
     public $columns = [];  // Dynamic columns configuration
