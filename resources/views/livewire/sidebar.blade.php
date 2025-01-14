@@ -1,6 +1,6 @@
 <div>
     <!-- Sidebar -->
-    <div class="w-56 p-4 space-y-4 bg-base-200 rounded-box">
+    <div class="p-4 space-y-4 bg-base-200 rounded-box">
         @foreach($sections as $section)
             <!-- Section Title -->
             <ul class="w-full menu bg-base-200 rounded-box">
