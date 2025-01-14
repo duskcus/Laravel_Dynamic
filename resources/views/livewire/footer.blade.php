@@ -1,7 +1,7 @@
 <div>
     {{-- FOOTER 1 --}}
     @if($footer1)
-        <footer class="p-10 footer bg-base-300 text-base-content">
+        <footer class="px-10 py-8 footer bg-base-300 text-base-content">
             @foreach($sections as $section)
                 <nav>
                     <h6 class="footer-title">{{ $section['title'] }}</h6>
@@ -24,7 +24,7 @@
     @if($footer2)
         <hr class="border-t-[1px] border-base-content">
 
-        <footer class="px-10 py-4 border-t footer bg-base-300 text-base-content border-base-300">
+        <footer class="px-10 py-8 border-t footer bg-base-300 text-base-content border-base-300">
             <aside class="items-center grid-flow-col">
                 <p>
                     Company Name
