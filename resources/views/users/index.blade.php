@@ -3,7 +3,7 @@
 {{-- @SECTION FOR THE START CONTENT --}}
 @section('content')
     <section>
-        @livewire('crud-table', [
+        @livewire('table', [
             'model' => \App\Models\User::class,
             'columns' => [
                 ['label' => ' ', 'field' => 'profile_picture_url', 'image' => true], // 'label' is a blank space, this fakes an emptty label, it will need a 'field'
