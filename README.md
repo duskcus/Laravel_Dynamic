@@ -39,7 +39,7 @@ php artisan make:livewire componentName
         'title' => 'Services',
         'links' => [
             ['name' => 'Branding', 'url' => route('placeholder')],  // Custom URL
-            ['name' => 'Design', 'url' => route('placeholder')],  // Defaults to route('design') if no 'url' is provided
+            ['name' => 'Design', =>,  // Defaults to route('design') if no 'url' is provided
             ['name' => 'Marketing', 'url' => route('placeholder')],
             ['name' => 'Advertisement', 'url' => route('placeholder')],
             ],
