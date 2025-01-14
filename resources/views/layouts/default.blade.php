@@ -36,7 +36,7 @@
         </div>
 
         <!-- Main Content Area -->
-        <div class="flex-1 p-4">
+        <div class="flex-1">
             {{-- Yield for page content --}}
             @yield('content')
         </div>
