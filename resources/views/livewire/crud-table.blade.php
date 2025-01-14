@@ -56,6 +56,8 @@
         </table>
 
         <!-- Pagination links -->
-        {{ $data->links() }}
+        <div class="p-4">
+            {{ $data->links() }}
+        </div>
     </div>
 </div>
