@@ -16,7 +16,7 @@ Uses Tailwind 3, Alpine, Livewire 3, Laravel 11 + DaisyUI 4 Soon 5
 - Dynamic authentication
 - Dynamic stepper
 - Searchbar
-- Dyanmic third party api
+- Dynamic third party api
 
 ```
 php artisan make:livewire componentName
