@@ -12,10 +12,11 @@ class Table extends Component
     public $apiUrl = 'https://pokeapi.co/api/v2/pokemon/1'; // Dynamic api integration
 
     // Mount method to initialize model and columns
-    public function mount($model, $columns = []) 
+    public function mount($model, $columns = [])
     {
         $this->model = $model;  // Set the passed model
-        
+        // $this->loadData();
+
         // Loop through columns and set label to field if not set
         $this->columns = collect($columns)->map(function ($column) {
             // If no label is set, use the field value as the label
@@ -52,6 +53,6 @@ class Table extends Component
         $data = $this->model::paginate(10);  // Dynamic pagination
 
         // Pass both data and columns to the view
-        return view('livewire.crud-table', ['data' => $data, 'columns' => $this->columns]);
+        return view('livewire.table', ['data' => $data, 'columns' => $this->columns]);
     }
 }
