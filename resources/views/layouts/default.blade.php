@@ -17,22 +17,31 @@
         ['name' => 'Users', 'url' => route('users.index')],
     ]])
 
-    @livewire('sidebar', ['sections' => [
-        [
-        'title' => 'Services',
-        'links' => [
-            ['name' => 'Branding', 'url' => route('placeholder')],  // Custom URL
-            ['name' => 'Design', 'url' => route('placeholder')],  // Defaults to route('design') if no 'url' is provided
-            ['name' => 'Marketing', 'url' => route('placeholder')],
-            ['name' => 'Advertisement', 'url' => route('placeholder')],
-            ],
-        ],
-    ]]) 
 
-    <main class="py-4 mx-[10%]">
-        {{-- YIELD FOR CONTENT --}}
-        @yield('content')
+
+    <main class="flex">
+        <!-- Sidebar -->
+        <div class="pr-4 bg-base-200">
+            @livewire('sidebar', ['sections' => [
+                [
+                    'title' => 'Services',
+                    'links' => [
+                        ['name' => 'Branding', 'url' => route('placeholder')],
+                        ['name' => 'Design', 'url' => route('placeholder')],
+                        ['name' => 'Marketing', 'url' => route('placeholder')],
+                        ['name' => 'Advertisement', 'url' => route('placeholder')],
+                    ],
+                ],
+            ]])
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 p-4">
+            {{-- Yield for page content --}}
+            @yield('content')
+        </div>
     </main>
+
 
     
     @livewire('footer', ['sections' => [
