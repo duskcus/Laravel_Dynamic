@@ -8,6 +8,7 @@ Uses Tailwind 3, Alpine, Livewire 3, Laravel 11 + DaisyUI 4 Soon 5
 
 **In progress:**
 - Dynamic CRUD Table with REST API support
+- Caching system for SPA
 
 **Future components:**
 - Dynamic Sidebar
