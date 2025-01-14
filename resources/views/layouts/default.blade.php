@@ -12,10 +12,11 @@
     {{-- INCLUDES FOR COMPONENTS --}}
 
     {{-- @include('components.header') --}}
-    {{-- @livewire('navbar', ['navbarItems' => [
+    @livewire('navbar', ['navbarItems' => [
         'home',
         ['name' => 'Users', 'url' => route('users.index')],
-    ]]) --}}
+        // 'api',
+    ]])
 
 
 
@@ -30,6 +31,23 @@
                         ['name' => 'Design', 'url' => route('placeholder')],
                         ['name' => 'Marketing', 'url' => route('placeholder')],
                         ['name' => 'Advertisement', 'url' => route('placeholder')],
+                    ],
+                ],
+                [
+                    'title' => 'Company',
+                    'links' => [
+                        ['name' => 'About us', 'url' => route('placeholder')],
+                        ['name' => 'Contact', 'url' => route('placeholder')],
+                        ['name' => 'Jobs', 'url' => route('placeholder')],
+                        ['name' => 'Press kit', 'url' => route('placeholder')],
+                    ],
+                ],
+                [
+                    'title' => 'Legal',
+                    'links' => [
+                        ['name' => 'Terms of use', 'url' => route('placeholder')],
+                        ['name' => 'Privacy policy', 'url' => route('placeholder')],
+                        ['name' => 'Cookie policy', 'url' => route('placeholder')],
                     ],
                 ],
             ]])
