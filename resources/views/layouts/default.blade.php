@@ -21,7 +21,7 @@
 
     <main class="flex">
         <!-- Sidebar -->
-        <div class="pr-4 bg-base-200">
+        <div class="bg-base-200">
             @livewire('sidebar', ['sections' => [
                 [
                     'title' => 'Services',
