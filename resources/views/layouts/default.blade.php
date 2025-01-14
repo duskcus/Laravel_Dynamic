@@ -13,9 +13,21 @@
 
     {{-- @include('components.header') --}}
     @livewire('navbar', ['navbarItems' => [
-    'home',
+        'home',
         ['name' => 'Users', 'url' => route('users.index')],
     ]])
+
+    @livewire('sidebar', ['sections' => [
+        [
+        'title' => 'Services',
+        'links' => [
+            ['name' => 'Branding', 'url' => route('placeholder')],  // Custom URL
+            ['name' => 'Design', 'url' => route('placeholder')],  // Defaults to route('design') if no 'url' is provided
+            ['name' => 'Marketing', 'url' => route('placeholder')],
+            ['name' => 'Advertisement', 'url' => route('placeholder')],
+            ],
+        ],
+    ]]) 
 
     <main class="py-4 mx-[10%]">
         {{-- YIELD FOR CONTENT --}}
