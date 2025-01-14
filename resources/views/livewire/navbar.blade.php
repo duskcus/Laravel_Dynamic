@@ -1,4 +1,4 @@
-<div class="drawer drawer-end">
+<div class="drawer">
     <!-- Drawer toggle checkbox -->
     <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
 
