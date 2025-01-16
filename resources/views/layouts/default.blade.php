@@ -16,8 +16,8 @@
     @livewire('navbar', ['navbarItems' => [
         'home',
         ['name' => 'Table', 'url' => route('users.index')],
-        'api',
-        'form',
+        ['name' => 'Api', 'url' => route('api')],
+        ['name' => 'Form', 'url' => route('form')],
     ]])
 
 
@@ -26,19 +26,18 @@
         <div class="bg-base-200">
             @livewire('sidebar', ['sections' => [
                 [
-                    'title' => 'Common',
+                    'title' => 'Basic',
                     'links' => [
-                        ['name' => 'Home', 'url' => route('home'), 'icon' => 'fa fa-home'],
                         ['name' => 'Table', 'url' => route('users.index'), 'icon' => 'fa fa-table'],
                         ['name' => 'Api Table', 'url' => route('api'), 'icon' => 'fa fa-cogs'],
-                        ['name' => 'Form', 'url' => route('form'), 'icon' => 'fa fa-edit'],
+                        ['name' => 'Modal Form', 'url' => route('form'), 'icon' => 'fa fa-edit'],
                     ],
                 ],
                 [
                     'title' => 'Utility',
                     'links' => [
-                        ['name' => 'Search Bar', 'url' => route('placeholder'), 'icon' => 'fa fa-search'],
-                        ['name' => 'Filters', 'url' => route('placeholder'), 'icon' => 'fa fa-filter'],
+                        // ['name' => 'Search Bar', 'url' => route('placeholder'), 'icon' => 'fa fa-search'],
+                        // ['name' => 'Filters', 'url' => route('placeholder'), 'icon' => 'fa fa-filter'],
                         ['name' => 'Toast', 'url' => route('placeholder'), 'icon' => 'fa fa-bell'],
                         ['name' => 'Pop-up', 'url' => route('placeholder'), 'icon' => 'fa fa-window-restore'],
                     ],
@@ -67,9 +66,8 @@
         'footer2' => true,
         'sections' => [
             [
-                'title' => 'Common',
+                'title' => 'Basic',
                 'links' => [
-                    ['name' => 'Home', 'url' => route('home'), 'icon' => 'fa fa-home'],
                     ['name' => 'Table', 'url' => route('users.index'), 'icon' => 'fa fa-table'],
                     ['name' => 'Api Table', 'url' => route('api'), 'icon' => 'fa fa-cogs'],
                     ['name' => 'Form', 'url' => route('form'), 'icon' => 'fa fa-edit'],
