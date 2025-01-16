@@ -29,26 +29,26 @@
                     'title' => 'Common',
                     'links' => [
                         ['name' => 'Home', 'url' => route('home'), 'icon' => 'fa fa-home'],
-                        ['name' => 'Table', 'url' => route('users.index')],
-                        ['name' => 'Api Table', 'url' => route('api')],
-                        ['name' => 'Form', 'url' => route('form')],
+                        ['name' => 'Table', 'url' => route('users.index'), 'icon' => 'fa fa-table'],
+                        ['name' => 'Api Table', 'url' => route('api'), 'icon' => 'fa fa-cogs'],
+                        ['name' => 'Form', 'url' => route('form'), 'icon' => 'fa fa-edit'],
                     ],
                 ],
                 [
                     'title' => 'Utility',
                     'links' => [
-                        ['name' => 'About us', 'url' => route('placeholder')],
-                        ['name' => 'Contact', 'url' => route('placeholder')],
-                        ['name' => 'Jobs', 'url' => route('placeholder')],
-                        ['name' => 'Press kit', 'url' => route('placeholder')],
+                        ['name' => 'Searchbar', 'url' => route('placeholder'), 'icon' => 'fa fa-search'],
+                        ['name' => 'Filters', 'url' => route('placeholder'), 'icon' => 'fa fa-filter'],
+                        ['name' => 'Jobs', 'url' => route('placeholder'), 'icon' => 'fa fa-briefcase'],
+                        ['name' => 'Press kit', 'url' => route('placeholder'), 'icon' => 'fa fa-newspaper'],
                     ],
                 ],
                 [
                     'title' => 'Security',
                     'links' => [
-                        ['name' => 'Stepper', 'url' => route('placeholder')],
-                        ['name' => 'Authentication', 'url' => route('placeholder')],
-                        ['name' => 'Authorization', 'url' => route('placeholder')],
+                        ['name' => 'Stepper', 'url' => route('placeholder'), 'icon' => 'fa fa-spinner'],
+                        ['name' => 'Authentication', 'url' => route('placeholder'), 'icon' => 'fa fa-lock'],
+                        ['name' => 'Authorization', 'url' => route('placeholder'), 'icon' => 'fa fa-shield-alt'],
                     ],
                 ],
             ]])
