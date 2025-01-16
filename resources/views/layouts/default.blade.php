@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -14,10 +15,10 @@
     {{-- @include('components.header') --}}
     @livewire('navbar', ['navbarItems' => [
         'home',
-        ['name' => 'Users', 'url' => route('users.index')],
-        // 'api',
+        ['name' => 'Table', 'url' => route('users.index')],
+        'api',
+        'form',
     ]])
-
 
 
     <main class="flex">
@@ -25,16 +26,16 @@
         <div class="bg-base-200">
             @livewire('sidebar', ['sections' => [
                 [
-                    'title' => 'Services',
+                    'title' => 'Common',
                     'links' => [
-                        ['name' => 'Branding', 'url' => route('placeholder')],
-                        ['name' => 'Design', 'url' => route('placeholder')],
-                        ['name' => 'Marketing', 'url' => route('placeholder')],
-                        ['name' => 'Advertisement', 'url' => route('placeholder')],
+                        ['name' => 'Home', 'url' => route('home'), 'icon' => 'fa fa-home'],
+                        ['name' => 'Table', 'url' => route('users.index')],
+                        ['name' => 'Api Table', 'url' => route('api')],
+                        ['name' => 'Form', 'url' => route('form')],
                     ],
                 ],
                 [
-                    'title' => 'Company',
+                    'title' => 'Utility',
                     'links' => [
                         ['name' => 'About us', 'url' => route('placeholder')],
                         ['name' => 'Contact', 'url' => route('placeholder')],
@@ -43,11 +44,11 @@
                     ],
                 ],
                 [
-                    'title' => 'Legal',
+                    'title' => 'Security',
                     'links' => [
-                        ['name' => 'Terms of use', 'url' => route('placeholder')],
-                        ['name' => 'Privacy policy', 'url' => route('placeholder')],
-                        ['name' => 'Cookie policy', 'url' => route('placeholder')],
+                        ['name' => 'Stepper', 'url' => route('placeholder')],
+                        ['name' => 'Authentication', 'url' => route('placeholder')],
+                        ['name' => 'Authorization', 'url' => route('placeholder')],
                     ],
                 ],
             ]])
@@ -60,23 +61,22 @@
         </div>
     </main>
 
-
     
     @livewire('footer', [
         'footer1' => true,
         'footer2' => true,
         'sections' => [
             [
-                'title' => 'Services',
+                'title' => 'Common',
                 'links' => [
-                    ['name' => 'Branding', 'url' => route('placeholder')],
-                    ['name' => 'Design', 'url' => route('placeholder')],
-                    ['name' => 'Marketing', 'url' => route('placeholder')],
-                    ['name' => 'Advertisement', 'url' => route('placeholder')],
+                        ['name' => 'Home', 'url' => route('home')],
+                        ['name' => 'Table', 'url' => route('users.index')],
+                        ['name' => 'Api Table', 'url' => route('api')],
+                        ['name' => 'Form', 'url' => route('form')],
                 ],
             ],
             [
-                'title' => 'Company',
+                'title' => 'Utility',
                 'links' => [
                     ['name' => 'About us', 'url' => route('placeholder')],
                     ['name' => 'Contact', 'url' => route('placeholder')],
@@ -85,16 +85,15 @@
                 ],
             ],
             [
-                'title' => 'Legal',
+                'title' => 'Security',
                 'links' => [
-                    ['name' => 'Terms of use', 'url' => route('placeholder')],
-                    ['name' => 'Privacy policy', 'url' => route('placeholder')],
-                    ['name' => 'Cookie policy', 'url' => route('placeholder')],
+                    ['name' => 'Stepper', 'url' => route('placeholder')],
+                    ['name' => 'Authentication', 'url' => route('placeholder')],
+                    ['name' => 'Authorization', 'url' => route('placeholder')],
                 ],
             ],
         ],
     ])    
-
 
 
     @livewireScripts
