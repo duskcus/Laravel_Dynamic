@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Livewire;
+
+use Livewire\Component;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
+
+class ApiTable extends Component
+{
+    public $model;      // Dynamic model class (e.g., User::class)
+    public $columns = []; // Dynamic columns configuration
+    public $apiUrl = '';  // API URL for fetching data
+    public $data = [];    // Data to be displayed in the table
+    public $perPage = 10; // Pagination size
+    public $currentPage;
+    public $total;
+    public $nextPageUrl;
+
+    // Mount method to initialize model and columns
+    public function mount($model, $columns = [], $apiUrl = '')
+    {
+        $this->model = $model; // Set the passed model
+        $this->columns = $this->initializeColumns($columns); // Initialize columns
+        if ($apiUrl) {
+            $this->apiUrl = $apiUrl; // Set API URL if passed
+            $this->loadDataFromApi();  // Load data if an API URL is provided
+        } else {
+            $this->loadData(); // Default method to load data from model
+        }
+    }
+
+    // Dynamically initialize columns with default labels if not set
+    protected function initializeColumns($columns)
+    {
+        return collect($columns)->map(function ($column) {
+            // If no label is set, use the field value as the label
+            if (empty($column['label'])) {
+                $column['label'] = ucfirst(str_replace('_', ' ', $column['field']));
+            }
+            return $column;
+        })->toArray();
+    }
+
+    // Fetch data from the API
+    public function loadDataFromApi()
+    {
+        // If this is the first request, use the base URL (initial pagination request)
+        $url = $this->apiUrl;
+
+        // If we are paginating, use the URL from the 'next' field
+        if ($this->nextPageUrl) {
+            $url = $this->nextPageUrl;
+        }
+
+        // Fetch the data from the API
+        $response = Http::get($url);
+
+        if ($response->successful()) {
+            $data = $response->json();
+            // dd($data);
+
+            // Store the results (the actual data items)
+            $this->data = $data['results'];
+            // Pagination info
+            $this->total = $data['count'];
+            $this->nextPageUrl = $data['next']; // Use the next URL for pagination
+        } else {
+            session()->flash('error', 'Failed to fetch data from API');
+        }
+    }
+
+
+    // Load data from the model
+    public function loadData()
+    {
+        $this->data = $this->model::paginate($this->perPage);
+    }
+
+    // Render method to fetch data and pass it to the view
+    public function render()
+    {
+        return view('livewire.api-table', [
+            'data' => $this->data,
+            'columns' => $this->columns,
+        ]);
+    }
+}
