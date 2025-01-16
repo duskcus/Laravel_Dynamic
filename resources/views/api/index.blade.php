@@ -3,8 +3,9 @@
 {{-- @SECTION FOR THE START CONTENT --}}
 @section('content')
     <section>
-        @livewire('crud-table', [
-            'model' => \App\Models\User::class,
+        @livewire('api-table', [
+            'model' => null,
+            'data' => "https://pokeapi.co/api/v2/pokemon",
             'columns' => [
                 ['label' => ' ', 'field' => 'profile_picture_url', 'image' => true], // 'label' is a blank space, this fakes an emptty label, it will need a 'field'
                 ['field' => 'name'], // 'label' is specified as 'Name'

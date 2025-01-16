@@ -28,7 +28,7 @@
             <aside class="items-center grid-flow-col">
                 <p>
                     Company Name
-                    <br />
+                    <br/>
                     Slogan, address, or phone number
                 </p>
             </aside>
