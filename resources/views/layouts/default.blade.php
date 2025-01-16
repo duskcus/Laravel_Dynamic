@@ -46,8 +46,8 @@
                     'title' => 'Security',
                     'links' => [
                         ['name' => 'Stepper', 'url' => route('placeholder'), 'icon' => 'fa fa-stairs'],
-                        ['name' => 'Authentication', 'url' => route('placeholder'), 'icon' => 'fa fa-lock'],
-                        ['name' => 'Authorization', 'url' => route('placeholder'), 'icon' => 'fa fa-shield-alt'],
+                        // ['name' => 'Authentication', 'url' => route('placeholder'), 'icon' => 'fa fa-lock'],
+                        // ['name' => 'Authorization', 'url' => route('placeholder'), 'icon' => 'fa fa-shield-alt'],
                     ],
                 ],
                 // [
@@ -96,8 +96,8 @@
                 'title' => 'Security',
                 'links' => [
                     ['name' => 'Stepper', 'url' => route('placeholder'), 'icon' => 'fa fa-stairs'],
-                    ['name' => 'Authentication', 'url' => route('placeholder'), 'icon' => 'fa fa-lock'],
-                    ['name' => 'Authorization', 'url' => route('placeholder'), 'icon' => 'fa fa-shield-alt'],
+                    // ['name' => 'Authentication', 'url' => route('placeholder'), 'icon' => 'fa fa-lock'],
+                    // ['name' => 'Authorization', 'url' => route('placeholder'), 'icon' => 'fa fa-shield-alt'],
                 ],
             ],
             // [
