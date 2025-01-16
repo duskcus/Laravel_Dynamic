@@ -15,9 +15,7 @@
     {{-- @include('components.header') --}}
     @livewire('navbar', ['navbarItems' => [
         'home',
-        ['name' => 'Table', 'url' => route('users.index')],
-        ['name' => 'Api', 'url' => route('api')],
-        ['name' => 'Form', 'url' => route('form')],
+        ['name' => 'GitHub', 'url' => "https://github.com/duskcus/Laravel_Dynamic"],
     ]])
 
 
@@ -38,16 +36,26 @@
                     'links' => [
                         // ['name' => 'Search Bar', 'url' => route('placeholder'), 'icon' => 'fa fa-search'],
                         // ['name' => 'Filters', 'url' => route('placeholder'), 'icon' => 'fa fa-filter'],
+                        // ['name' => 'Themes', 'url' => route('placeholder'), 'icon' => 'fa fa-palette'],
                         ['name' => 'Toast', 'url' => route('placeholder'), 'icon' => 'fa fa-bell'],
+                        ['name' => 'Loader', 'url' => route('placeholder'), 'icon' => 'fa fa-spinner'],
                         ['name' => 'Pop-up', 'url' => route('placeholder'), 'icon' => 'fa fa-window-restore'],
                     ],
                 ],
                 [
                     'title' => 'Security',
                     'links' => [
-                        ['name' => 'Stepper', 'url' => route('placeholder'), 'icon' => 'fa fa-spinner'],
+                        ['name' => 'Stepper', 'url' => route('placeholder'), 'icon' => 'fa fa-stairs'],
                         ['name' => 'Authentication', 'url' => route('placeholder'), 'icon' => 'fa fa-lock'],
                         ['name' => 'Authorization', 'url' => route('placeholder'), 'icon' => 'fa fa-shield-alt'],
+                    ],
+                ],
+                [
+                    'title' => 'Extra',
+                    'links' => [
+                        ['name' => 'Payment', 'url' => route('placeholder'), 'icon' => 'fa fa-spinner'],
+                        ['name' => 'Invoices', 'url' => route('placeholder'), 'icon' => 'fa fa-lock'],
+                        ['name' => 'Orders', 'url' => route('placeholder'), 'icon' => 'fa fa-shield-alt'],
                     ],
                 ],
             ]])
