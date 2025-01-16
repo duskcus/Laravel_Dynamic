@@ -1,5 +1,5 @@
 # Laravel Dynamic
-Uses Tailwind 3, Alpine, Livewire 3, Laravel 11 + DaisyUI 4 Soon 5
+Uses Tailwind 3, Alpine, Livewire 3, Laravel 11 + DaisyUI 4 Soon 5, Laravel Octane, Redis
 
 # Roadmap
 **Current Functionality:**
