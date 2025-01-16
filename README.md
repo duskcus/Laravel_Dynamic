@@ -5,19 +5,19 @@ Uses Tailwind 3, Alpine, Livewire 3, Laravel 11 + DaisyUI 4 Soon 5, Redis, ~~Lar
 **Current Functionality:**
 - Dynamic Navbar
 - Dynamic Footer
+- Dynamic Sidebar
 
 **In progress:**
 - Dynamic CRUD Table with REST API support
 - Caching system for SPA
 
 **Future components:**
-- Dynamic Sidebar
 - AJAX modal form
 - Filters
+- Searchbar
 - Dynamic authentication
 - Dynamic stepper
-- Searchbar
-- Dynamic third party api
+- Api name/password support for api table
 
 ```
 php artisan make:livewire componentName
