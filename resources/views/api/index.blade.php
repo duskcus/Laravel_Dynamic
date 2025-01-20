@@ -4,8 +4,16 @@
 @section('content')
     <section>
         @livewire('api-table', [
-            'model' => null,
             'apiUrl' => "https://pokeapi.co/api/v2/pokemon",
+            'queryParameters' => [
+                ['pageSize' => 'pageSize'],
+            ],
+            'pageSizes' => [
+                ['pageSize' => 10],
+            ],
+            'pageOffset' => [
+                ['pageSize' => 10],
+            ],
             'columns' => [
                 ['field' => 'name'],
                 ['field' => 'url'],

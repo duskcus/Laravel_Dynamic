@@ -4,11 +4,13 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
+// use Illuminate\Support\Facades\Log;
+
 
 class ApiTable extends Component
 {
     public $columns = []; // Dynamic columns configuration
-    public $apiUrl = '';  // API URL for fetching data
+    public $apiUrl;  // API URL for fetching data
     public $data = [];    // Data to be displayed in the table
     public $perPage = 10; // Pagination size
     public $currentPage = 1; // Current page
@@ -16,7 +18,7 @@ class ApiTable extends Component
     public $nextPageUrl;  // URL for next page of API data
 
     // Mount method to initialize columns and API URL
-    public function mount($columns = [], $apiUrl = '')
+    public function mount($columns = [], $apiUrl)
     {
         $this->columns = $this->initializeColumns($columns); // Initialize columns
         $this->apiUrl = $apiUrl; // Set API URL
@@ -46,7 +48,6 @@ class ApiTable extends Component
 
         if ($response->successful()) {
             $data = $response->json();
-            
             // Store the results (the actual data items)
             $this->data = $data['results'];
             // Pagination info
@@ -78,9 +79,6 @@ class ApiTable extends Component
     // Render method to fetch data and pass it to the view
     public function render()
     {
-        return view('livewire.api-table', [
-            'data' => $this->data,
-            'columns' => $this->columns,
-        ]);
+        return view('livewire.api-table');
     }
 }
