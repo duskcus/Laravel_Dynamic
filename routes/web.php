@@ -16,7 +16,7 @@ Route::get('/form', function () {
 })->name('form');
 
 Route::get('/placeholder', function () {
-    return ('placeholder route');
+    return ('Has not been developed yet...');
 })->name('placeholder');
 
 // RESOURCES

@@ -4,30 +4,24 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Str;
 
 class ApiTable extends Component
 {
-    public $model;      // Dynamic model class (e.g., User::class)
     public $columns = []; // Dynamic columns configuration
     public $apiUrl = '';  // API URL for fetching data
     public $data = [];    // Data to be displayed in the table
     public $perPage = 10; // Pagination size
-    public $currentPage;
-    public $total;
-    public $nextPageUrl;
+    public $currentPage = 1; // Current page
+    public $total;        // Total records
+    public $nextPageUrl;  // URL for next page of API data
 
-    // Mount method to initialize model and columns
-    public function mount($model, $columns = [], $apiUrl = '')
+    // Mount method to initialize columns and API URL
+    public function mount($columns = [], $apiUrl = '')
     {
-        $this->model = $model; // Set the passed model
         $this->columns = $this->initializeColumns($columns); // Initialize columns
-        if ($apiUrl) {
-            $this->apiUrl = $apiUrl; // Set API URL if passed
-            $this->loadDataFromApi();  // Load data if an API URL is provided
-        } else {
-            $this->loadData(); // Default method to load data from model
-        }
+        $this->apiUrl = $apiUrl; // Set API URL
+        
+        $this->loadDataFromApi();  // Load data from API
     }
 
     // Dynamically initialize columns with default labels if not set
@@ -45,21 +39,14 @@ class ApiTable extends Component
     // Fetch data from the API
     public function loadDataFromApi()
     {
-        // If this is the first request, use the base URL (initial pagination request)
-        $url = $this->apiUrl;
-
-        // If we are paginating, use the URL from the 'next' field
-        if ($this->nextPageUrl) {
-            $url = $this->nextPageUrl;
-        }
-
+        // Construct URL with pagination parameters
+        $url = $this->apiUrl . '?page=' . $this->currentPage . '&perPage=' . $this->perPage;
         // Fetch the data from the API
         $response = Http::get($url);
 
         if ($response->successful()) {
             $data = $response->json();
-            // dd($data);
-
+            
             // Store the results (the actual data items)
             $this->data = $data['results'];
             // Pagination info
@@ -70,11 +57,22 @@ class ApiTable extends Component
         }
     }
 
-
-    // Load data from the model
-    public function loadData()
+    // Method to load next page of data
+    public function loadNextPage()
     {
-        $this->data = $this->model::paginate($this->perPage);
+        if ($this->nextPageUrl) {
+            $this->currentPage++;
+            $this->loadDataFromApi();
+        }
+    }
+
+    // Method to load previous page of data (if needed)
+    public function loadPreviousPage()
+    {
+        if ($this->currentPage > 1) {
+            $this->currentPage--;
+            $this->loadDataFromApi();
+        }
     }
 
     // Render method to fetch data and pass it to the view

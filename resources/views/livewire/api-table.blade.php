@@ -19,17 +19,12 @@
                 <tr>
                     @foreach ($columns as $column)
                         <td>
-                            @if (isset($column['image']) && $column['image'])
+                            @if ($column['field'] === 'profile_picture_url')
                                 <!-- Handle image column (if necessary) -->
                                 <img src="{{ $row[$column['field']] }}" alt="Image" style="max-width: 50px;"/>
                             @else
                                 <!-- Render the data for each field dynamically -->
-                                @if (is_array($row) || is_object($row))
-                                    <!-- Use data_get to handle both arrays and objects -->
-                                    {{ data_get($row, $column['field']) }}
-                                @else
-                                    {{ $row }}
-                                @endif
+                                {{ $row[$column['field']] }}
                             @endif
                         </td>
                     @endforeach
@@ -48,19 +43,19 @@
             <div class="join">
                 <!-- Previous Button -->
                 @if ($currentPage > 1)
-                    <button class="join-item btn" wire:click.prevent="changePage({{ $currentPage - 1 }})">«</button>
+                    <button class="join-item btn" wire:click.prevent="loadPreviousPage">Previous</button>
                 @else
-                    <button class="join-item btn btn-disabled" disabled>«</button>
+                    <button class="join-item btn btn-disabled" disabled>Previous</button>
                 @endif
     
                 <!-- Current Page Display -->
                 <button class="join-item btn">Page {{ $currentPage }}</button>
     
                 <!-- Next Button -->
-                @if ($currentPage < ceil($total / $perPage))
-                    <button class="join-item btn" wire:click.prevent="changePage({{ $currentPage + 1 }})">»</button>
+                @if ($nextPageUrl)
+                    <button class="join-item btn" wire:click.prevent="loadNextPage">Next</button>
                 @else
-                    <button class="join-item btn btn-disabled" disabled>»</button>
+                    <button class="join-item btn btn-disabled" disabled>Next</button>
                 @endif
             </div>
         @endif
