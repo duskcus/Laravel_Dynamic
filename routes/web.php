@@ -15,6 +15,22 @@ Route::get('/form', function () {
     return view('form.index');
 })->name('form');
 
+Route::get('/loader', function () {
+    return view('loader.index');
+})->name('loader');
+
+Route::get('/popup', function () {
+    return view('popup.index');
+})->name('popup');
+
+Route::get('/stepper', function () {
+    return view('stepper.index');
+})->name('stepper');
+
+Route::get('/toast', function () {
+    return view('toast.index');
+})->name('toast');
+
 Route::get('/placeholder', function () {
     return ('Has not been developed yet...');
 })->name('placeholder');
