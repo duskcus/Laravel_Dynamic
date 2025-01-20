@@ -14,7 +14,7 @@
 
     {{-- @include('components.header') --}}
     @livewire('navbar', ['navbarItems' => [
-        'home',
+        ['name' => 'Home', 'url' => route('home')],
         ['name' => 'GitHub', 'url' => "https://github.com/duskcus/Laravel_Dynamic"],
     ]])
 
