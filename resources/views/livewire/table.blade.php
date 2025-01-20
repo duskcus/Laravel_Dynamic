@@ -35,7 +35,7 @@
                                 @if (!empty($column['image']) && $column['image'] === true)
                                     <!-- Render the image if it's an image column -->
                                     @if ($item->{$column['field']})
-                                        <img class="rounded-lg src="{{ asset($item->{$column['field']}) }}" alt="Image" width="50" />
+                                        <img class="rounded-lg" src="{{ asset($item->{$column['field']}) }}" alt="Image" width="50" />
                                     @else
                                         <span>No Image</span>
                                     @endif
