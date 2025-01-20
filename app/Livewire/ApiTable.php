@@ -9,13 +9,14 @@ use Illuminate\Support\Facades\Http;
 
 class ApiTable extends Component
 {
+    // public $query = [];   
     public $columns = []; // Dynamic columns configuration
     public $apiUrl;  // API URL for fetching data
     public $data = [];    // Data to be displayed in the table
-    public $perPage = 10; // Pagination size
-    public $currentPage = 1; // Current page
-    public $total;        // Total records
+    public $perPage; // Pagination size
+    public $currentPage; // Current page
     public $nextPageUrl;  // URL for next page of API data
+    public $total;        // Total records
 
     // Mount method to initialize columns and API URL
     public function mount($columns = [], $apiUrl)
@@ -42,7 +43,7 @@ class ApiTable extends Component
     public function loadDataFromApi()
     {
         // Construct URL with pagination parameters
-        $url = $this->apiUrl . '?page=' . $this->currentPage . '&perPage=' . $this->perPage;
+        $url = $this->apiUrl . '?offset=' . $this->currentPage . '&limit=' . $this->perPage;
         // Fetch the data from the API
         $response = Http::get($url);
 
